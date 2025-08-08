@@ -46,9 +46,10 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05ac38c4d5bfbb8959adc066d064f463&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05ac38c4d5bfbb8959adc066d064f463&libraries=services" onload="initWidget()"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        // 모든 코드를 하나의 함수 안에 넣고, 카카오 스크립트가 로드된 후에 호출
+        function initWidget() {
             var map;
             var markers = [];
             var infowindow = new kakao.maps.InfoWindow({zIndex:1});
@@ -113,7 +114,7 @@
             if (searchButton) { searchButton.addEventListener('click', searchPlaces); }
         
             initMap(37.566826, 126.9786567); // 서울시청으로 초기화
-        });
+        }
     </script>
 </body>
 </html>
